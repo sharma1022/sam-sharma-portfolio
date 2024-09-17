@@ -1,8 +1,11 @@
+import LandingHero from '@/components/landing-hero'
 import React from 'react'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <section>
+      <LandingHero />
+    </section>
   )
 }
 

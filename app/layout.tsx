@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn("min-h-screen",montserrat.className)}
+        className={cn("min-h-screen bg-background text-zinc-950 antialiased selection:bg-accent selection:text-background",montserrat.className)}
       >
         {children}
       </body>
