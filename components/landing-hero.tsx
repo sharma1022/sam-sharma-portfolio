@@ -2,7 +2,7 @@ import React from 'react'
 
 const LandingHero = () => {
   return (
-    <div className='-mt-[112px] w-full'>
+    <div className='w-full'>
         <div className="mx-auto max-w-7xl">
             <h1 className='bg-accent bg-clip-text py-2 text-5xl font-bold text-transparent sm:text-6xl md:text-7xl xl:text-8xl'>
                 Sam Sharma
