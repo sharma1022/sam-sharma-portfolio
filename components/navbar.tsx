@@ -1,9 +1,17 @@
 "use client"
 import { cn } from '@/utils/cn';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react'
+import logo from "../public/logo/logo.svg"
+import { Caesar_Dressing } from 'next/font/google';
+
+const caesar_dressing = Caesar_Dressing({
+    subsets: ["latin"],
+    weight:["400"]
+  });
 
 export type NavbarRoute = {
     title: string;
@@ -26,8 +34,8 @@ const Navbar = (props: NavbarProps) => {
           className="drop-shadow-teralight flex items-center justify-center"
           aria-label="Return to home page"
         >
-          <div className="relative h-12 w-12 sm:h-14 sm:w-14">
-           S
+          <div className="relative h-12 w-12 sm:h-14 hover:scale-125 justify-start items-start">
+          <span className={cn("text-accent text-[52px] ",caesar_dressing.className)}>SS</span>
           </div>
         </Link>
         <nav className="hidden items-center gap-2 rounded-full px-2 py-2 shadow-md ring-1 ring-zinc-200 backdrop-blur-md dark:ring-accent/50 md:flex">
