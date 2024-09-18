@@ -1,6 +1,17 @@
 import React from 'react'
 
-const Navbar = () => {
+export type NavbarRoute = {
+    title: string;
+    href: string;
+  };
+  
+  export type NavbarRoutes = NavbarRoute[];
+  
+  export interface NavbarProps {
+    routes: NavbarRoutes;
+  }
+
+const Navbar = (props: NavbarProps) => {
   return (
     <div>Navbar</div>
   )
