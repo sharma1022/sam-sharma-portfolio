@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <section>
       <LandingHero />
+      <div className="h-[600px]"></div>
     </section>
   )
 }
