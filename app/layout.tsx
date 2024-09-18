@@ -3,6 +3,7 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/utils/cn";
 import Navbar from "@/components/navbar";
+import { routes } from "@/data/navRoutes";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -21,14 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={cn("min-h-screen bg-background text-zinc-950 antialiased selection:bg-accent selection:text-background",montserrat.className)}
+        className={cn(
+          "min-h-screen bg-background text-zinc-950 antialiased selection:bg-accent selection:text-background",
+          montserrat.className,
+        )}
       >
-        <header>
-          <Navbar />
-        </header>
-        <main>
-        {children}
-        </main>
+        <Navbar routes={routes} />
+        <main>{children}</main>
       </body>
     </html>
   );
