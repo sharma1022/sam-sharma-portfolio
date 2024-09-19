@@ -37,7 +37,7 @@ const AnimatedLogo = () => {
     initial="hidden"
     animate="visible"
     transition={{
-      default: { duration: 2.5, ease: "easeInOut" },
+      default: { duration: 1.5, ease: "easeInOut" },
       fill: { duration: 5.5, ease: [0.6, 0.05, -0.01, 0.99] },
     }}
   />
