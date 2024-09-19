@@ -5,6 +5,8 @@ import { cn } from "@/utils/cn";
 import Navbar from "@/components/navbar";
 import { routes } from "@/data/navRoutes";
 import { ThemeProvider } from "next-themes";
+import { AnimatePresence } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -31,7 +33,10 @@ export default function RootLayout({
         <ThemeProvider  attribute="class" defaultTheme="light">
         <Navbar routes={routes} />
         <main>
-          {children}
+        <AnimatePresence mode="wait" initial={false}>
+            {children}
+          </AnimatePresence>
+          
         </main>
         </ThemeProvider>
       </body>

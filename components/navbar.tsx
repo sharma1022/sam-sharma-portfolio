@@ -1,11 +1,13 @@
 "use client"
 import { cn } from '@/utils/cn';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React from 'react'
+import React, { useState } from 'react'
 import { Caesar_Dressing } from 'next/font/google';
 import ThemeToggle from './theme-toggle';
+import MobileNav from './mobile-nav';
+import MenuLogo from './ui/mobile-menu-btn';
 
 const caesar_dressing = Caesar_Dressing({
     subsets: ["latin"],
@@ -25,6 +27,12 @@ export type NavbarRoute = {
 
 const Navbar = (props: NavbarProps) => {
     const pathName = usePathname();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalOpen((prev) => !prev);
+  };
   return (
     <header className="sticky top-0 z-50 mt-2 px-6 py-8 sm:mt-8 sm:px-14 md:px-20">
       <div className="mx-auto flex items-center justify-between lg:max-w-7xl">
@@ -34,7 +42,7 @@ const Navbar = (props: NavbarProps) => {
           aria-label="Return to home page"
         >
           <div className="relative h-12 w-12 sm:h-14 hover:scale-125 justify-start items-start">
-          <span className={cn("text-accent text-[52px] ",caesar_dressing.className)}>SS</span>
+          <span className={cn("text-accent text-[36px] sm:text-[56px] ",caesar_dressing.className)}>SS</span>
           </div>
         </Link>
         <nav className="hidden items-center gap-2 rounded-full px-2 py-2 shadow-md ring-1 ring-zinc-200 backdrop-blur-md dark:ring-accent/50 md:flex">
@@ -77,7 +85,15 @@ const Navbar = (props: NavbarProps) => {
           </ul>
           <ThemeToggle/>
         </nav>
+        <AnimatePresence>
+          <MenuLogo open={isModalOpen} toggle={toggleModal} />
+        </AnimatePresence>
       </div>
+      <MobileNav
+        routes={props.routes}
+        openMenu={isModalOpen}
+        setOpenMenu={setIsModalOpen}
+      />
     </header>
   )
 }
