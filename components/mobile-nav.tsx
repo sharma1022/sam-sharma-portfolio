@@ -5,7 +5,7 @@ import { Dialog,DialogPanel, Transition, TransitionChild } from "@headlessui/rea
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/utils/cn';
-import ThemeToggle from './theme-toggle';
+import ThemeToggle from './ui/theme-toggle';
 export interface MobileMenuProps extends NavbarProps {
     openMenu: boolean;
     setOpenMenu: Dispatch<SetStateAction<boolean>>;
