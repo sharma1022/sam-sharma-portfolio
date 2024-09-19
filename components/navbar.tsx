@@ -1,12 +1,11 @@
 "use client"
 import { cn } from '@/utils/cn';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React from 'react'
-import logo from "../public/logo/logo.svg"
 import { Caesar_Dressing } from 'next/font/google';
+import ThemeToggle from './theme-toggle';
 
 const caesar_dressing = Caesar_Dressing({
     subsets: ["latin"],
@@ -76,6 +75,7 @@ const Navbar = (props: NavbarProps) => {
               );
             })}
           </ul>
+          <ThemeToggle/>
         </nav>
       </div>
     </header>
