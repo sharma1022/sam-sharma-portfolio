@@ -36,7 +36,6 @@ export default function RootLayout({
         <AnimatePresence mode="wait" initial={false}>
             {children}
           </AnimatePresence>
-          
         </main>
         </ThemeProvider>
       </body>
