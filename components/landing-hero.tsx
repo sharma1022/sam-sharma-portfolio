@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 import FadeUp from "@/animation/fade-up";
+import CustomButton from "./ui/custom-button";
 
 const LandingHero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -56,9 +57,13 @@ const LandingHero = () => {
             Ready to turn your ideas into epic digital experiences?
         </div>
         </FadeUp>
+        <FadeUp key="contact-btn" duration={0.6} delay={0.4}>
+          <CustomButton text="Contact Me!" handleClick={()=>{}} />
+        </FadeUp>
         </AnimatePresence>
         </div>
       </div>
+
     </motion.section>
   );
 };
