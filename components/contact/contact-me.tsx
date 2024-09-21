@@ -3,7 +3,6 @@ import Link from 'next/link'
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
-import CustomButton from '../ui/custom-button';
 const Contact = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const handleSubmit = (e: { preventDefault: () => void }) => {
