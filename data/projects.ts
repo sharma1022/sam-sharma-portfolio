@@ -1,3 +1,4 @@
+import { ProjectCardProps } from "@/components/projects/project-card";
 import { ProjectsListItem } from "@/components/projects/projects-list";
 
 export const PROJECT_DATA: ProjectsListItem[] = [
@@ -39,4 +40,79 @@ export const PROJECT_DATA: ProjectsListItem[] = [
         DARK: "/images/projects/p3.avif",
       },
     },
+  ];
+
+  export const PROJECTS_CARD: ProjectCardProps[] = [
+    {
+      name: "Project 1",
+      favicon: "/images/projects/logos/jsontree.ico",
+      imageUrl: [
+        "/images/projects/p1.avif",
+        "/images/projects/p1.avif",
+      ],
+      description:
+        "Lorem Ipsum",
+      sourceCodeHref: "",
+      liveWebsiteHref: "",
+    },
+    {
+      name: "Project 2",
+      favicon: "",
+      imageUrl: [
+        "/images/projects/p2.avif",
+        "/images/projects/p2.avif",
+      ],
+      description:
+        "afxsddahgfdhdfh ddsgsdg ds dsgs gsd ghdgnbv mnz rwaehearra",
+      sourceCodeHref: "",
+      liveWebsiteHref: "",
+    },
+    {
+        name: "Project 2",
+        favicon: "",
+        imageUrl: [
+          "/images/projects/p2.avif",
+          "/images/projects/p2.avif",
+        ],
+        description:
+          "afxsddahgfdhdfh ddsgsdg ds dsgs gsd ghdgnbv mnz rwaehearra",
+        sourceCodeHref: "",
+        liveWebsiteHref: "",
+      },
+      {
+        name: "Project 2",
+        favicon: "",
+        imageUrl: [
+          "/images/projects/p2.avif",
+          "/images/projects/p2.avif",
+        ],
+        description:
+          "afxsddahgfdhdfh ddsgsdg ds dsgs gsd ghdgnbv mnz rwaehearra",
+        sourceCodeHref: "",
+        liveWebsiteHref: "",
+      },
+      {
+        name: "Project 2",
+        favicon: "",
+        imageUrl: [
+          "/images/projects/p2.avif",
+          "/images/projects/p2.avif",
+        ],
+        description:
+          "afxsddahgfdhdfh ddsgsdg ds dsgs gsd ghdgnbv mnz rwaehearra",
+        sourceCodeHref: "",
+        liveWebsiteHref: "",
+      },
+      {
+        name: "Project 2",
+        favicon: "",
+        imageUrl: [
+          "/images/projects/p2.avif",
+          "/images/projects/p2.avif",
+        ],
+        description:
+          "afxsddahgfdhdfh ddsgsdg ds dsgs gsd ghdgnbv mnz rwaehearra",
+        sourceCodeHref: "",
+        liveWebsiteHref: "",
+      },
   ];

@@ -72,7 +72,7 @@ const LandingHero = () => {
               className="px-0.5 inline-block py-0.5 w-full sm:w-fit rounded-full bg-accent  text-base font-semibold text-zinc-900 hover:text-background dark:text-zinc-200 sm:text-base md:text-xl"
             >
               <span className="block bg-background hover:bg-accent rounded-full px-5 py-2">
-                Download CV
+                Get Resume
               </span>
             </Link>
           </div>
