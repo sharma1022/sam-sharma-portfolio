@@ -1,12 +1,14 @@
 import Contact from '@/components/contact/contact-me'
 import ProjectCard from '@/components/projects/project-card'
+import CursorTrailCanvas from '@/components/ui/cursor-trail-canvas'
 import { PROJECTS_CARD } from '@/data/projects'
 import React from 'react'
 
 const Projects = () => {
   return (
-    <>
+  <> 
     <section className="mx-auto mb-40 mt-6 w-full gap-20 px-6 sm:mt-12 sm:px-14 md:px-20">
+    <CursorTrailCanvas className="pointer-events-none fixed inset-0 -z-10 h-full w-full" />
         <div className="mx-auto max-w-7xl">
           <h1 className="text-2xl font-semibold text-foreground md:text-4xl">
             Projects

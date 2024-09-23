@@ -4,24 +4,24 @@ import { ProjectsListItem } from "@/components/projects/projects-list";
 export const PROJECT_DATA: ProjectsListItem[] = [
     {
       index: 0,
-      title: "Project 1",
-      href: "/projects",
-      tags: ["Nextjs", "Tailwindcss", "Monaco Editor", "Vercel"],
+      title: "SteadyPathAI",
+      href: "https://steadypathai.netlify.app/",
+      tags: ["Reactjs","Vite", "Tailwindcss","React-router-dom", "Postgress", "DrizzleORM","Serverless Neon","GeminiAI"],
       image: {
-        LIGHT: "/images/projects/p1.avif",
-        DARK: "/images/projects/p1.avif",
+        LIGHT: "/images/projects/steadyp2.png",
+        DARK: "/images/projects/steadyp1.png",
       },
     },
     {
       index: 1,
-      title: "Project 2",
+      title: "InStock",
       href: "/projects",
       tags: [
         "Reactjs",
-        "Tailwindcss",
         "Scss",
-        "Vite",
-        "React-router-dom",
+        "Nodejs",
+        "Knexjs",
+        "MySQL",
         "Redux",
         "Vercel",
       ],
@@ -44,16 +44,16 @@ export const PROJECT_DATA: ProjectsListItem[] = [
 
   export const PROJECTS_CARD: ProjectCardProps[] = [
     {
-      name: "Project 1",
+      name: "SteadyPathAI",
       favicon: "/images/projects/logos/jsontree.ico",
       imageUrl: [
-        "/images/projects/p1.avif",
+        "/images/projects/steadyp1.png",
         "/images/projects/p1.avif",
       ],
       description:
-        "Lorem Ipsum",
+        "AI Driven Mental Headlth recommendations.",
       sourceCodeHref: "",
-      liveWebsiteHref: "",
+      liveWebsiteHref: "https://steadypathai.netlify.app/",
     },
     {
       name: "Project 2",
