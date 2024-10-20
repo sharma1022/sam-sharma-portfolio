@@ -6,6 +6,7 @@ import { PROJECT_DATA } from '@/data/projects'
 import { SKILLS_DATA } from '@/data/skills'
 import React from 'react'
 import CursorTrailCanvas from '@/components/ui/cursor-trail-canvas'
+import Footer from '@/components/footer'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <SkillSection skills={SKILLS_DATA} />
       <ProjectsSection projects={PROJECT_DATA} />
       <Contact/>
+      <Footer/>
     </section>
   )
 }
