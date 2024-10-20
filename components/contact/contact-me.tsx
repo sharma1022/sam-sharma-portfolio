@@ -3,11 +3,35 @@ import Link from 'next/link'
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
+import axios from 'axios';
+
 const Contact = () => {
   const [emailSubmitted, setEmailSubmitted] = useState(false);
-  const handleSubmit = (e: { preventDefault: () => void }) => {
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  }
+  
+    const form = e.currentTarget;
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+    const subject = (form.elements.namedItem('subject') as HTMLInputElement).value;
+    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+  
+    try {
+      const res = await axios.post('/api/sendEmail', {
+        email,
+        subject,
+        message,
+      });
+  
+      if (res.status === 200) {
+        setEmailSubmitted(true);
+      } else {
+        console.error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error sending email:', error);
+    }
+  };
 
   return (
     <section
@@ -26,10 +50,10 @@ const Contact = () => {
           try my best to get back to you!
         </p>
         <div className="socials flex flex-row gap-2">
-          <Link href="github.com">
+          <Link href="https://github.com/sharma1022">
           <FaGithub size={32} className='text-accent hover:text-text-zinc-900 dark:hover:text-zinc-200' />
           </Link>
-          <Link href="linkedin.com">
+          <Link href="www.linkedin.com/in/samshrma">
           <FaLinkedin size={32} className='text-accent hover:text-text-zinc-900 dark:hover:text-zinc-200' />
           </Link>
           <Link href="linkedin.com">
@@ -93,6 +117,7 @@ const Contact = () => {
             <button
               type="submit"
               className="bg-accent hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              
             >
               Send Message
             </button>
