@@ -1,7 +1,7 @@
 import LandingHero from '@/components/landing-hero'
 import ProjectsSection from '@/components/projects/projects-section'
 import SkillSection from '@/components/skills/skills-section'
-import Contact from '@/components/contact/contact-me.tsx'
+import Contact from '@/components/contact/contact-me'
 import { PROJECT_DATA } from '@/data/projects'
 import { SKILLS_DATA } from '@/data/skills'
 import React from 'react'

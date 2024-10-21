@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer = () => {
     return (
-        <footer className="footer border z-10 border-t-[#33353F] border-l-transparent border-b-transparent border-r-transparent text-white">
+        <footer className="footer border z-10 dark:border-t-[#33353F] border-t-slate-300  border-l-transparent border-b-transparent border-r-transparent text-white">
           <div className="container p-9 flex justify-between items-center">
           <div className="relative h-12 w-12 sm:h-14 sm:w-14">
             <AnimatedLogo />
