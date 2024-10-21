@@ -6,7 +6,6 @@ import Navbar from "@/components/navbar";
 import { routes } from "@/data/navRoutes";
 import { ThemeProvider } from "next-themes";
 import { AnimatePresence } from "framer-motion";
-import { useRouter } from "next/navigation";
 
 const montserrat = Montserrat({
   subsets: ["latin"],

@@ -10,10 +10,6 @@ import MobileNav from './mobile-nav';
 import MenuLogo from './ui/mobile-menu-btn';
 import AnimatedLogo from '@/animation/logo';
 
-const caesar_dressing = Caesar_Dressing({
-    subsets: ["latin"],
-    weight:["400"]
-  });
 
 export type NavbarRoute = {
     title: string;
