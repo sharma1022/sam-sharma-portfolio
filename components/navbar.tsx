@@ -4,7 +4,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
-import { Caesar_Dressing } from 'next/font/google';
 import ThemeToggle from './ui/theme-toggle';
 import MobileNav from './mobile-nav';
 import MenuLogo from './ui/mobile-menu-btn';
