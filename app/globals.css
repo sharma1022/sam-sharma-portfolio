@@ -35,3 +35,23 @@
   }
   
 }
+
+@keyframes wheelMove {
+  0% {
+    top: 10px;
+    opacity: 1;
+  }
+  100% {
+    top: 60px;
+    opacity: 0;
+  }
+}
+
+/* Class for the scroll wheel animation */
+.scroll-wheel {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: wheelMove 2s infinite;
+  z-index: 10;
+}

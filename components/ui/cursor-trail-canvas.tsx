@@ -16,9 +16,12 @@ export default function CursorTrailCanvas(props: CursorTrailCanvasProps) {
     const { cleanUp, renderTrailCursor } = cursorTrail({
       ref: refCanvas,
       color: props.color,
-    });
-    renderTrailCursor();
-
+    }) as { cleanUp: () => void; renderTrailCursor: () => void; stopAnimation?: () => void; startAnimation?: () => void; };
+  
+    if (renderTrailCursor) {
+      renderTrailCursor();
+    }
+  
     return () => {
       cleanUp();
     };

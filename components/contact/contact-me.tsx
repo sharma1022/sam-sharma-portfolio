@@ -43,7 +43,7 @@ const Contact = () => {
         <h5 className="mb-8 text-xl font-semibold text-accent sm:text-3xl">
           Let&apos;s Connect
         </h5>
-        <p className="text-base mb-8 font-semibold dark:text-zinc-200 sm:text-base text-zinc-900 mb-4 max-w-md">
+        <p className="text-base mb-8 font-semibold dark:text-zinc-200 sm:text-base text-zinc-900 max-w-md">
           {" "}
           I&apos;m currently looking for new opportunities, my inbox is always
           open. Whether you have a question or just want to say hi, I&apos;ll

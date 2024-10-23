@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import FadeUp from "@/animation/fade-up";
 import Link from "next/link";
+import MouseScroll from "@/animation/mouse-scroll-icon";
 
 const LandingHero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -77,6 +78,8 @@ const LandingHero = () => {
                     Get Resume
                   </span>
                 </Link>
+                <div><MouseScroll/></div>
+                
               </div>
             </FadeUp>
           </AnimatePresence>

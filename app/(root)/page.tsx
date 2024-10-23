@@ -12,7 +12,7 @@ import Footer from '@/components/footer'
 const Home = () => {
   return (
     <section>
-      <CursorTrailCanvas className="pointer-events-none fixed inset-0 -z-10 h-full w-full" />
+      <CursorTrailCanvas className="hidden md:block pointer-events-none fixed inset-0 -z-10 h-full w-full" />
       <LandingHero />
       <SkillSection skills={SKILLS_DATA} />
       <ProjectsSection projects={PROJECT_DATA} />
