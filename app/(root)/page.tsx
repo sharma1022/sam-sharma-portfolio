@@ -6,6 +6,7 @@ import { PROJECT_DATA } from '@/data/projects'
 import { SKILLS_DATA } from '@/data/skills'
 import React from 'react'
 import CursorTrailCanvas from '@/components/ui/cursor-trail-canvas'
+import Testimonials from '@/components/testimonials'
 import Footer from '@/components/footer'
 
 const Home = () => {
@@ -15,6 +16,7 @@ const Home = () => {
       <LandingHero />
       <SkillSection skills={SKILLS_DATA} />
       <ProjectsSection projects={PROJECT_DATA} />
+      <Testimonials/>
       <Contact/>
       <Footer/>
     </section>

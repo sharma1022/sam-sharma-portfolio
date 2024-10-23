@@ -33,7 +33,7 @@ const LandingHero = () => {
       }}
       transition={{ type: "spring", stiffness: 100 }}
       ref={ref}
-      className="flex h-[calc(100vh-112px)] items-center px-6 sm:px-14 md:px-20"
+      className="flex h-[calc(100vh-336px)] md:h-[calc(100vh-112px)] items-center px-6 sm:px-14 md:px-20"
     >
       <div className="w-full">
         <div className="mx-auto max-w-7xl">
@@ -59,10 +59,10 @@ const LandingHero = () => {
               </div>
             </FadeUp>
             <FadeUp key="contact-btn" duration={0.6} delay={0.4}>
-              <div className="mt-8">
+              <div className="mt-8 flex gap-4 sm:gap-0 flex-col sm:flex-row">
                 <Link
                   href="/#contact"
-                  className="px-6 inline-block py-2.5 w-full sm:w-fit rounded-full mr-4 bg-accent hover:bg-border text-base font-semibold text-background hover:text-zinc-800 dark:text-zinc-200 sm:text-base md:text-xl"
+                  className="px-6 text-center inline-block py-2.5 w-full sm:w-fit rounded-full mr-4 bg-accent hover:bg-border text-base font-semibold text-background hover:text-zinc-800 dark:text-zinc-200 sm:text-base md:text-xl"
                 >
                   Hire Me
                 </Link>
@@ -71,7 +71,7 @@ const LandingHero = () => {
                   href="/samsharma-resume.pdf" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-0.5 inline-block py-0.5 w-full sm:w-fit rounded-full bg-accent text-base font-semibold text-zinc-900 hover:text-background dark:text-zinc-200 sm:text-base md:text-xl"
+                  className="px-0.5 text-center inline-block py-0.5 w-full sm:w-fit rounded-full bg-accent text-base font-semibold text-zinc-900 hover:text-background dark:text-zinc-200 sm:text-base md:text-xl"
                 >
                   <span className="block bg-background hover:bg-accent rounded-full px-5 py-2">
                     Get Resume

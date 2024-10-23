@@ -6,14 +6,18 @@ export type CursorTrail = {
 };
 
 export function cursorTrail(props: CursorTrail) {
-  const colorRaw = getComputedStyle(document.documentElement).getPropertyValue(
-    "--accent",
-  );
-  const accentColor = `hsla(${
-    colorRaw ? colorRaw.split(" ").join(",") : "0, 0%, 0%"
-  }, 0.35)`;
   const { ref, color } = props;
-  const ctx = ref.current?.getContext("2d")!;
+  const ctx = ref.current?.getContext("2d");
+
+  // Safeguard to ensure the canvas context is available
+  if (!ctx || !ref.current) {
+    console.error("Canvas context is not available.");
+    return;
+  }
+
+  const colorRaw = getComputedStyle(document.documentElement).getPropertyValue("--accent");
+  const accentColor = `hsla(${colorRaw ? colorRaw.split(" ").join(",") : "0, 0%, 0%"}, 0.35)`;
+
   let AnimationFeature = {
     friction: 0.5,
     trails: 20,
@@ -34,6 +38,7 @@ export function cursorTrail(props: CursorTrail) {
     y: number;
     vy: number;
     vx: number;
+
     constructor() {
       this.x = 0;
       this.y = 0;
@@ -90,6 +95,8 @@ export function cursorTrail(props: CursorTrail) {
     }
 
     draw(): void {
+      if (!ctx) return;  // Safeguard to ensure ctx is available
+
       let e, t;
       let n = this.nodes[0].x;
       let i = this.nodes[0].y;
@@ -110,48 +117,49 @@ export function cursorTrail(props: CursorTrail) {
     }
   }
 
-  function renderAnimation() {
-    if (running) {
-      ctx.globalCompositeOperation = "source-over";
-      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-      ctx.globalCompositeOperation = "lighter";
-      ctx.strokeStyle = color || accentColor;
-      ctx.lineWidth = 1;
-      for (let x: Line, t = 0; t < AnimationFeature.trails; t++) {
-        if (newLines[t] !== undefined) {
-          x = newLines[t];
-          x.update();
-          x.draw();
-        }
-      }
-      window.requestAnimationFrame(renderAnimation);
-    }
-  }
-
   let newLines: Line[] = [];
 
+  function renderAnimation() {
+    if (!ctx || !running) return;  // Safeguard for ctx and running flag
+
+    ctx.globalCompositeOperation = "source-over";
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.globalCompositeOperation = "lighter";
+    ctx.strokeStyle = color || accentColor;
+    ctx.lineWidth = 1;
+    for (let x: Line, t = 0; t < AnimationFeature.trails; t++) {
+      if (newLines[t]) {
+        x = newLines[t];
+        x.update();
+        x.draw();
+      }
+    }
+    window.requestAnimationFrame(renderAnimation);
+  }
+
   function move(event: MouseEvent | TouchEvent) {
-    !(event instanceof MouseEvent)
-      ? ((cursorPosition.x = event.touches[0].pageX),
-        (cursorPosition.y = event.touches[0].pageY))
-      : ((cursorPosition.x = event.clientX),
-        (cursorPosition.y = event.clientY));
+    if (event instanceof MouseEvent) {
+      cursorPosition.x = event.clientX;
+      cursorPosition.y = event.clientY;
+    } else if (event.touches.length > 0) {
+      cursorPosition.x = event.touches[0].pageX;
+      cursorPosition.y = event.touches[0].pageY;
+    }
     event.preventDefault();
   }
 
   function createLine(event: TouchEvent) {
-    event.touches.length === 1 &&
-      ((cursorPosition.x = event.touches[0].pageX),
-      (cursorPosition.y = event.touches[0].pageY));
+    if (event.touches.length === 1) {
+      cursorPosition.x = event.touches[0].pageX;
+      cursorPosition.y = event.touches[0].pageY;
+    }
   }
 
   function onMouseMove(e: MouseEvent | TouchEvent) {
     function populateLines() {
       newLines = [];
       for (let i = 0; i < AnimationFeature.trails; i++) {
-        newLines.push(
-          new Line({ spring: 0.45 + (i / AnimationFeature.trails) * 0.025 }),
-        );
+        newLines.push(new Line({ spring: 0.45 + (i / AnimationFeature.trails) * 0.025 }));
       }
     }
 
@@ -165,9 +173,14 @@ export function cursorTrail(props: CursorTrail) {
     renderAnimation();
   }
 
+  let resizeTimeout: NodeJS.Timeout | null = null;
   function resizeCanvas() {
-    ctx.canvas.width = window.innerWidth - 20;
-    ctx.canvas.height = window.innerHeight;
+    if (!ctx) return;  // Safeguard for ctx
+    if (resizeTimeout) clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      ctx.canvas.width = window.innerWidth;
+      ctx.canvas.height = window.innerHeight;
+    }, 200);
   }
 
   function stopAnimation() {
@@ -186,7 +199,6 @@ export function cursorTrail(props: CursorTrail) {
     document.addEventListener("touchstart", onMouseMove);
     window.addEventListener("orientationchange", resizeCanvas);
     window.addEventListener("resize", resizeCanvas);
-    // window.addEventListener("scroll", trackYScroll);
     window.addEventListener("focus", startAnimation);
     window.addEventListener("blur", stopAnimation);
     resizeCanvas();
@@ -200,7 +212,6 @@ export function cursorTrail(props: CursorTrail) {
     document.removeEventListener("touchstart", onMouseMove);
     window.removeEventListener("orientationchange", resizeCanvas);
     window.removeEventListener("resize", resizeCanvas);
-    // window.removeEventListener("scroll", trackYScroll);
     window.removeEventListener("focus", startAnimation);
     window.removeEventListener("blur", stopAnimation);
   }

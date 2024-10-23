@@ -36,14 +36,14 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 mx-auto max-w-7xl my-12 md:my-12 py-24 gap-4 relative  px-6 sm:px-14 md:px-20"
+      className="grid md:grid-cols-2 mx-auto max-w-7xl pb-16 sm:py-24 gap-4 relative  px-6 sm:px-14 md:px-20"
     >
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
-        <h5 className="text-xl font-semibold text-accent sm:text-4xl my-2">
+        <h5 className="mb-8 text-xl font-semibold text-accent sm:text-3xl">
           Let&apos;s Connect
         </h5>
-        <p className="text-base font-semibold dark:text-zinc-200 sm:text-base text-zinc-900 mb-4 max-w-md">
+        <p className="text-base mb-8 font-semibold dark:text-zinc-200 sm:text-base text-zinc-900 mb-4 max-w-md">
           {" "}
           I&apos;m currently looking for new opportunities, my inbox is always
           open. Whether you have a question or just want to say hi, I&apos;ll
@@ -53,7 +53,7 @@ const Contact = () => {
           <Link href="https://github.com/sharma1022">
           <FaGithub size={32} className='text-accent hover:text-text-zinc-900 dark:hover:text-zinc-200' />
           </Link>
-          <Link href="www.linkedin.com/in/samshrma">
+          <Link href="https://www.linkedin.com/in/samshrma">
           <FaLinkedin size={32} className='text-accent hover:text-text-zinc-900 dark:hover:text-zinc-200' />
           </Link>
           <Link href="linkedin.com">
