@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 
 export const InfiniteMovingCards = ({
   items,
-  direction = "left",
+  direction = "right",
   speed = "slow",
   pauseOnHover = true,
   className,
@@ -14,6 +14,7 @@ export const InfiniteMovingCards = ({
     quote: string;
     name: string;
     title: string;
+    avatar: string;
   }[];
   direction?: "left" | "right";
   speed?: "fast" | "normal" | "slow";
@@ -103,6 +104,9 @@ export const InfiniteMovingCards = ({
                 {item.quote}
               </span>
               <div className="relative z-20 mt-6 flex flex-row items-center">
+              <div className="me-3">
+                  <img className="w-14 h-14 rounded-full" src={item.avatar} alt="profile" />
+                </div>
                 <span className="flex flex-col gap-0.5">
                   <span className=" text-lg leading-[1.6] text-accent font-semibold ">
                     {item.name}

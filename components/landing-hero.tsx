@@ -34,7 +34,7 @@ const LandingHero = () => {
       }}
       transition={{ type: "spring", stiffness: 100 }}
       ref={ref}
-      className="flex h-[calc(100vh-336px)] md:h-[calc(100vh-112px)] items-center px-6 sm:px-14 md:px-20"
+      className="flex h-[calc(100vh-336px)] md:h-[calc(100vh-112px)] items-center pt-32 px-6 sm:px-14 md:px-20"
     >
       <div className="w-full">
         <div className="mx-auto max-w-7xl">

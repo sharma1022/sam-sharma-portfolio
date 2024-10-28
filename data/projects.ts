@@ -26,8 +26,8 @@ export const PROJECT_DATA: ProjectsListItem[] = [
         "Vercel",
       ],
       image: {
-        LIGHT: "/images/projects/p2.avif",
-        DARK: "/images/projects/p2.avif",
+        LIGHT: "/images/projects/instock-1.png",
+        DARK: "/images/projects/instock-1.png",
       },
     },
     {
@@ -66,13 +66,16 @@ export const PROJECT_DATA: ProjectsListItem[] = [
       name: "InStock",
       favicon: "/images/projects/logos/instock.ico",
       imageUrl: [
-        "/images/projects/p2.avif",
-        "/images/projects/p2.avif",
+        "/images/projects/instock-1.png",
+        "/images/projects/instock-2.png",
+        "/images/projects/instock-3.png",
+        "/images/projects/instock-4.png",
+        "/images/projects/instock-5.png"
       ],
       description:
         "Warehouse and Inventory management System build in a 4 person team as part of the BrainStation group project",
-      sourceCodeHref: "",
-      liveWebsiteHref: "",
+      sourceCodeHref: "https://github.com/sharma1022/InStock-MCSD",
+      liveWebsiteHref: "https://instock-phi.vercel.app/",
     },
     {
         name: "CineVerse",
