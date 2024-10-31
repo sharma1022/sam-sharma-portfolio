@@ -1,0 +1,23 @@
+<svg
+      viewBox="0 0 500 500"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-full w-full fill-accent stroke-accent"
+    >
+      <path
+        d="M400,100 
+           L150,100 
+           Q100,100 100,150 
+           L100,200 
+           Q100,250 150,250 
+           L350,250 
+           Q400,250 400,300 
+           L400,350 
+           Q400,400 350,400 
+           L100,400"
+        stroke="#156165"
+        strokeWidth="10"
+        strokeLinecap="round"
+        strokeLinejoin="miter"
+        fill="#156165"
+      />
+    </svg>

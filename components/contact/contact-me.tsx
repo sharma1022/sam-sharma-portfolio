@@ -38,7 +38,7 @@ const Contact = () => {
       id="contact"
       className="grid md:grid-cols-2 mx-auto max-w-7xl pb-16 sm:py-24 gap-4 relative  px-6 sm:px-14 md:px-20"
     >
-      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
+      <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-accent to-transparent rounded-full h-40 w-40 md:h-60 md:w-60 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
         <h5 className="mb-8 text-xl font-semibold text-accent sm:text-3xl">
           Let&apos;s Connect

@@ -11,6 +11,7 @@ export interface ProjectCardProps {
     favicon: string;
     imageUrl: string[];
     description: string;
+    iconLists:string[];
     sourceCodeHref: string;
     liveWebsiteHref?: string;
   }
@@ -37,6 +38,20 @@ const ProjectCard = (props: ProjectCardProps) => {
         <div className="mt-3">
           <p className="text-xs md:text-sm">{props.description}</p>
         </div>
+          <div className="flex items-center mt-4">
+            {props.iconLists.map((icon, index) => (
+              <div
+                key={index}
+                className="border border-white/[.2] rounded-full bg-zinc-100 dark:bg-zinc-900 lg:w-12 lg:h-12 w-8 h-8 flex justify-center items-center"
+                style={{
+                  transform: `translateX(-${5 * index + 2}px)`,
+                }}
+              >
+                <img src={icon} alt="icon5" className="p-2" />
+              </div>
+            ))}
+          </div>
+
         <div className="mt-6 flex items-center justify-end gap-6">
           <a
             href={props.sourceCodeHref}

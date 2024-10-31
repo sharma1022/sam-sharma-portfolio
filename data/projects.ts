@@ -45,7 +45,7 @@ export const PROJECT_DATA: ProjectsListItem[] = [
   export const PROJECTS_CARD: ProjectCardProps[] = [
     {
       name: "SteadyPathAI",
-      favicon: "/images/projects/logos/jsontree.ico",
+      favicon: "/images/projects/logos/steadypath.svg",
       imageUrl: [
         "/images/projects/steady-1.png",
         "/images/projects/steady-2.png",
@@ -59,7 +59,13 @@ export const PROJECT_DATA: ProjectsListItem[] = [
       ],
       description:
         "AI Driven Mental Headlth recommendations.",
-      sourceCodeHref: "",
+      iconLists: ["/images/projects/icons/react.svg",
+        "/images/projects/icons/tailwind.svg",
+        "/images/projects/icons/drizzle.jpg",
+        "/images/projects/icons/neon.svg",
+        "/images/projects/icons/postgresql.svg"
+      ],
+      sourceCodeHref: "https://github.com/sharma1022/SteadyPathAI",
       liveWebsiteHref: "https://steadypathai.netlify.app/",
     },
     {
@@ -74,6 +80,13 @@ export const PROJECT_DATA: ProjectsListItem[] = [
       ],
       description:
         "Warehouse and Inventory management System build in a 4 person team as part of the BrainStation group project",
+      iconLists: ["/images/projects/icons/react.svg",
+        "/images/projects/icons/node.svg",
+        "/images/projects/icons/express.svg",
+        "/images/projects/icons/knex.svg",
+        "/images/projects/icons/mysql.svg",
+        "/icons/sass.svg"
+      ],
       sourceCodeHref: "https://github.com/sharma1022/InStock-MCSD",
       liveWebsiteHref: "https://instock-phi.vercel.app/",
     },
@@ -90,12 +103,19 @@ export const PROJECT_DATA: ProjectsListItem[] = [
         ],
         description:
           "TMDB movie app built using the MERN stack",
+        iconLists: ["/icons/mongodb.svg",
+          "/images/projects/icons/express.svg",
+        "/images/projects/icons/react.svg",
+        "/images/projects/icons/node.svg",
+        "/icons/react-router.svg",
+        "/icons/mui.svg",
+      ],
         sourceCodeHref: "https://github.com/sharma1022/cine-verse",
         liveWebsiteHref: "https://cine-verse-client.vercel.app/",
       },
       {
         name: "Portfolio Website",
-        favicon: "",
+        favicon: "/images/projects/logos/portfolio.svg",
         imageUrl: [
           "/images/projects/portfolio-1.png",
           "/images/projects/portfolio-2.png",
@@ -103,8 +123,14 @@ export const PROJECT_DATA: ProjectsListItem[] = [
         ],
         description:
           "My personal portfolio website",
+        iconLists: ["/icons/next.svg",
+          "/images/projects/icons/tailwind.svg",
+          "/images/projects/icons/nodemailer.png",
+          "/images/projects/icons/aceternity.jpg",
+          "/icons/framer-motion.svg"
+        ],
         sourceCodeHref: "https://github.com/sharma1022/sam-sharma-portfolio",
-        liveWebsiteHref: "",
+        liveWebsiteHref: "/",
       },
       {
         name: "BandSite",
@@ -115,8 +141,9 @@ export const PROJECT_DATA: ProjectsListItem[] = [
         ],
         description:
           "Bandsite Frontend built during my time at BrainStation",
-        sourceCodeHref: "",
-        liveWebsiteHref: "",
+        iconLists: ["/icons/html.svg","/icons/javascript.svg","/icons/sass.svg"],
+        sourceCodeHref: "https://github.com/sharma1022/sam-sharma-bandsite",
+        liveWebsiteHref: "https://bandsite-delta.vercel.app/",
       },
       {
         name: "Sumz",
@@ -126,6 +153,7 @@ export const PROJECT_DATA: ProjectsListItem[] = [
         ],
         description:
           "Summerize Articles with OpenAI GPT-4",
+        iconLists: ["/icons/reactjs.svg","/images/projects/icons/openai.svg"],
         sourceCodeHref: "https://github.com/sharma1022/ai-summarizer",
         liveWebsiteHref: "https://phenomenal-clafoutis-4a2ebd.netlify.app/",
       },
@@ -139,6 +167,7 @@ export const PROJECT_DATA: ProjectsListItem[] = [
         ],
         description:
           "Custom Video Player API",
+        iconLists: ["/icons/reactjs.svg","/images/projects/icons/express.svg","/images/projects/icons/node.svg","/icons/sass.svg"],
         sourceCodeHref: "https://github.com/sharma1022/sam-sharma-brainflix",
         liveWebsiteHref: "https://brainflix-chi.vercel.app/",
       },

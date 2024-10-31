@@ -33,9 +33,9 @@ const testimonials = [
   ];
 const Testimonials = () => {
   return (
-    <section className="px-6 pb-16 sm:px-14 md:px-20">
-      <div className="relative mx-auto max-w-7xl">
-        <div className="relative right-0 top-0  lg:block">
+    <section className="px-6 z-30 pb-16 sm:px-14 md:px-20">
+      <div className="relative  mx-auto max-w-7xl">
+        <div className="relative right-0 top-0 lg:block">
         <h2 className="text-xl font-semibold text-accent sm:text-3xl mb-16">
           Testimonials
         </h2>

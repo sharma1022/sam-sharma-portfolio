@@ -1,6 +1,5 @@
-"use client"
+"use client";
 import { CSSProperties, useEffect, useRef } from "react";
-
 import { cursorTrail } from "@/utils/cursor-trail";
 
 export interface CursorTrailCanvasProps {
@@ -16,7 +15,12 @@ export default function CursorTrailCanvas(props: CursorTrailCanvasProps) {
     const { cleanUp, renderTrailCursor } = cursorTrail({
       ref: refCanvas,
       color: props.color,
-    }) as { cleanUp: () => void; renderTrailCursor: () => void; stopAnimation?: () => void; startAnimation?: () => void; };
+    }) as { 
+      cleanUp: () => void; 
+      renderTrailCursor: () => void; 
+      stopAnimation?: () => void; 
+      startAnimation?: () => void; 
+    };
   
     if (renderTrailCursor) {
       renderTrailCursor();
@@ -30,8 +34,11 @@ export default function CursorTrailCanvas(props: CursorTrailCanvasProps) {
   return (
     <canvas
       ref={refCanvas}
-      className={props.className}
-      style={props.style}
+      className={`${props.className} fixed top-0 left-0 w-full h-full pointer-events-none`} // Ensures full viewport coverage and no pointer events
+      style={{
+        zIndex: -10, // Send the canvas behind other elements
+        ...props.style,
+      }}
     ></canvas>
   );
 }
