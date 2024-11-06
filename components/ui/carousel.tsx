@@ -27,10 +27,9 @@ const swipePower = (offset: number, velocity: number) => Math.abs(offset) * velo
 export type CarouselProps = {
   aspectRatio: number;
   images: string[];
-  altTexts: string[]; // New prop for accessibility
 };
 
-export default function Carousel({ aspectRatio = 1, images, altTexts = [] }: CarouselProps) {
+export default function Carousel({ aspectRatio = 1, images }: CarouselProps) {
   const [[page, direction], setPage] = useState([0, 0]);
 
   const imageIndex = wrap(0, images.length, page);
@@ -46,7 +45,6 @@ export default function Carousel({ aspectRatio = 1, images, altTexts = [] }: Car
           className="h-full w-full bg-cover cursor-pointer" // Added cursor pointer for better UX
           style={{ aspectRatio }}
           src={images[imageIndex]}
-          alt={altTexts[imageIndex] || `Slide ${imageIndex + 1}`} // Accessibility alt text
           custom={direction}
           variants={variant}
           initial="enter"
